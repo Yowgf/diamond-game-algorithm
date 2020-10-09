@@ -27,7 +27,7 @@ APPLIANCE   := appliance
 BUILD       := build
 
 # Project's modules
-MODULES := 
+MODULES := Diamonds Interface Utils
 
 # Files extensions
 HEADER_EXTENSION     := hpp
