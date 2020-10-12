@@ -28,8 +28,8 @@ else
 		@echo Are you sure? \(Y/N\)
 		@read choice && \
 		if [[ "$$choice" = "y" ]] || [[ "$$choice" = "Y" ]]; then \
-		{ rm --verbose --preserve-root $(TARGET) && \
-			rm --verbose --preserve-root --recursive $(OBJECT_DIRS) && \
+		{ rm --verbose --preserve-root --recursive $(OBJECT_DIRS) && \
+			rm --verbose --preserve-root $(TARGET) && \
 			echo Cleaning successful.; } || \
 			$(call e_prev_cmd, Cleaning of some directory failed.) \
 		else \
