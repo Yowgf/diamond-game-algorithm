@@ -12,12 +12,27 @@
 #ifndef INIT_H
 #define INIT_H 1
 
+#include <stdexcept>
+#include <vector>
+
 namespace Interface {
 
 class init {
-public:
-	init(int p_argc, char** p_argv);
+private:
+	unsigned int m_num_diamonds;
+	std::vector<unsigned int>* m_weights;
+	
+	// Defines m_num_diamonds and m_weights
+	void m_process_entries(int p_argc, char** p_argv);
 
+public:
+	class wrong_argc : public std::invalid_argument {
+	public:
+		wrong_argc(const char* p_what) : std::invalid_argument(p_what) {};
+	};
+
+	init(int p_argc, char** p_argv);
+	~init();
 };
 
 }
