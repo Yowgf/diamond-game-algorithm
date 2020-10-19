@@ -20,7 +20,7 @@
 //:D
 int main(int argc, char** argv)
 {
-	std::cerr << "Comeco do main..." << std::endl;
+	std::cerr << "Program starting..." << std::endl;
 	try {
 		Interface::init(argc, argv);
 	}

@@ -43,10 +43,10 @@ manager::manager(std::vector<unsigned int>* p_entries,
 	}
 
 	// Choosing algorithm
-	if (!p_mode.compare("Brute"))
-		m_alg_ret = Diamonds::brute_force(p_entries);
+	if (!p_mode.compare("brute"))
+		m_alg_ret = Diamonds::brute_force::run(p_entries);
 	else
-		m_alg_ret = Diamonds::dynamic(p_entries);
+		m_alg_ret = Diamonds::dynamic::run(p_entries); // Default
 
 	std::cerr << "Result is:" << "\n\n";
 

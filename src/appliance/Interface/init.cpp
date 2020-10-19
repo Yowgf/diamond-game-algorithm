@@ -115,12 +115,27 @@ init::init(int p_argc, char** p_argv)
 	std::string alg_mode;
 	// Checking argc
 	if (p_argc != 3)
-		alg_mode = "brute";
+		alg_mode = "dynamic";
 	else
 		alg_mode = p_argv[2];
 	std::cerr << "alg_mode = " << alg_mode << std::endl;
 
-	manager{m_weights, alg_mode};
+	// In case invalid alg_mode was written, default to dynamic,
+	//   but warn user.
+	if(alg_mode.compare("dynamic") && alg_mode.compare("brute")) {
+		std::cerr << "Algorithm mode " << alg_mode;
+		std::cerr << " unrecognized, defaulting to dynamic..." << std::endl;
+		alg_mode = "dynamic";
+	}
+
+	try {
+		manager{m_weights, alg_mode};
+	}
+	catch (std::invalid_argument& e) {
+		Utils::error(e, "Fatal");
+		return;
+	}
+
 
 	std::cerr << "Leaving init" << std::endl;
 }
