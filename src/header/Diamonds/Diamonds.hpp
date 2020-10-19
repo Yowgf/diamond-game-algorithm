@@ -14,6 +14,5 @@
 
 #include "Diamonds/brute_force.hpp"
 #include "Diamonds/dynamic.hpp"
-#include "Diamonds/tree.hpp"
 
 #endif
