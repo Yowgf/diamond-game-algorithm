@@ -12,15 +12,29 @@
 #ifndef DYNAMIC_H
 #define DYNAMIC_H 1
 
-#include <vector>
+#include "Diamonds/Diamonds_cg.hpp"
 
 namespace Diamonds {
 
 class dynamic {
+private:
+	// Pre-processing
+	// Input:  pointer to unsorted vector of weights
+	// Sorting is performed inline
+	static void insertion_sort(wvec*);
+
+	// Input:  pointer to increasingly ordered vector of weights
+	// Output: pointer to bucketed list of weights
+	static wbuckets* bucketized(wvec*);
+
+	// Messing with the buckets (actually cutting the diamonds)
+	// Input:  bucketized weights
+	// Output: minimum weight through diamond cutting
+	static weight cut_diamonds(wbuckets*);
 public:
 	// Input:  pointer to vector containing weights
 	// Output: minimum final weight
-	static unsigned int run(std::vector<unsigned int>* p_weights);
+	static weight run(wvec* p_weights);
 
 
 };
