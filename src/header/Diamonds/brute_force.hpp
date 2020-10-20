@@ -12,20 +12,19 @@
 #ifndef BRUTE_FORCE_H
 #define BRUTE_FORCE_H 1
 
-#include <list>
-#include <vector>
+#include "Diamonds/Diamonds_cg.hpp"
 
 namespace Diamonds {
 
 class brute_force {
 private:
-	static void find_min(std::vector<unsigned int>&);
-
+	static void find_min(wvec&);
+	
 public:
-	static std::list<unsigned int> final_weights;
+	static wvec final_weights;
 	// Receives vector containing weights, and returns minimum
 	//   final weight.
-	static unsigned int run(std::vector<unsigned int>* p_weights);
+	static unsigned int run(wvec* p_weights);
 
 };
 
