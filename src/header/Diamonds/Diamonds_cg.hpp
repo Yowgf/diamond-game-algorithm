@@ -4,9 +4,7 @@
 // ====================================
 //
 // Description:
-// This file includes all the header files inside ~Diamonds~
-//   module, for easy access to the whole module.
-// Also, implements algorithms.
+// Diamonds module common ground definitions
 ////////////////////////////////////////////////////////////////
 
 #ifndef DIAMONDS_CG_H
