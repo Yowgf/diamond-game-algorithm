@@ -16,7 +16,7 @@
 
 #include <iostream>
 #include <fstream>
-#include <vector>
+#include <locale>
 
 namespace Interface {
 
@@ -49,7 +49,7 @@ void init::m_process_entries(int p_argc, char** p_argv)
 	
 	// In case number of diamonds is not provided
 	t_peek = test_file.peek();
-	if (t_peek == '\n' || t_peek == EOF)
+	if (t_peek == EOF || t_peek == '\n' || !std::isdigit(t_peek))
 		throw std::runtime_error("Malformed entry file.");
 
 	test_file >> num_diamonds;
