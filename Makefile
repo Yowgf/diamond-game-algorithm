@@ -9,7 +9,7 @@
 #
 # Options:
 #
-# "TARGET=..." -------------- lets you specify file names
+# test  --------------------- program testing rule
 #
 # clean --------------------- cleaning built files rule
 # ---------------------------------------------------------------

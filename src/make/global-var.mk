@@ -38,6 +38,5 @@ EXECUTABLE_EXTENSION := exe
 # Regarding tests
 TEST_SCRIPT        := run-tests.sh
 TEST_STEM          := EX
-TEST_IN_EXTENSION  := in
 TEST_OUT_EXTENSION := out
-TEST_NUMBER        := 9
+TEST_QUANTITY      := 12

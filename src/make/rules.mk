@@ -43,7 +43,7 @@ test ::
 ifeq "$(wildcard $(TARGET) $(TARGET).$(EXECUTABLE_EXTENSION))" ""
 	$(MAKE)
 endif
-	@bash $(TEST_SCRIPT) $(TEST_STEM) $(TEST_IN_EXTENSION) $(TEST_OUT_EXTENSION) $(TEST_NUMBER)
+	@bash $(TEST_SCRIPT) $(TEST_STEM) $(TEST_OUT_EXTENSION) $(TEST_QUANTITY)
 	g++ -std=c++11 -Wall src/time-measure.cpp -o build/time-measure.exe
 	./build/time-measure.exe
 
