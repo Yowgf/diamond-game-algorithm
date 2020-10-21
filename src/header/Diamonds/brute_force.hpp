@@ -18,7 +18,7 @@ namespace Diamonds {
 
 class brute_force {
 private:
-	static void find_min(wvec&);
+	static void find_finals(wvec&);
 	
 public:
 	static wvec final_weights;

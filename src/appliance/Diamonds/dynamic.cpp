@@ -51,15 +51,16 @@ void dynamic::insertion_sort(wvec* p_weights)
 			
 		}
 	}
-
+/*
 	// Print resulting vector
 	std::cerr << "Printing sorted weights" << std::endl;
 	it = sorted_weights->begin();
+
 	for (; it != sorted_weights->end(); it++) {
 		std::cerr << *it << ' ';
 	}
 	std::cerr << std::endl;
-
+*/
 	std::cerr << "Leaving dynamic::insertion_sort" << std::endl;
 
 }
@@ -82,6 +83,7 @@ weight dynamic::cut_diamonds(wbuckets* p_buckets)
 	bucket* new_bucket = nullptr;
 
 	while (p_buckets->size() > 1) {
+/*
 		std::cerr << "Buckets" << std::endl;
 		std::cerr.width(5);
 		std::cerr.flags(std::ios::internal);
@@ -98,12 +100,9 @@ weight dynamic::cut_diamonds(wbuckets* p_buckets)
 			std::cerr.flags(std::ios::internal);
 			std::cerr << (*ti_aux)->second << '\n';
 		}
-
+*/
 		new_bucket = new bucket((*ti)->first, 1);
-		std::cerr << "new_bucket->first: " << new_bucket->first << std::endl;
-		std::cerr << "new_bucket->second: " << new_bucket->second << std::endl;
-		
-		std::cerr << "Combining diamonds" << std::endl;
+
 		// Combine this diamond with the one to the left
 		ti_aux = ti;
 		ti_aux--;
@@ -114,7 +113,6 @@ weight dynamic::cut_diamonds(wbuckets* p_buckets)
 		if ((*ti_aux)->second == 0) {
 			delete (*ti_aux);
 			p_buckets->erase(ti_aux);
-			std::cerr << "Removed ti_aux" << std::endl;
 		}
 		(*ti)->second--;
 
@@ -187,6 +185,7 @@ wbuckets* dynamic::bucketized(wvec* p_weights)
 	// Special addition for the inclusion of last bucket
 	buckets->push_back(new bucket(bucket_value, bucket_counter));
 
+	/*
 	std::cerr << "Printing buckets" << std::endl;
 	std::cerr.width(5);
 	std::cerr.flags(std::ios::internal);
@@ -203,6 +202,7 @@ wbuckets* dynamic::bucketized(wvec* p_weights)
 		std::cerr.flags(std::ios::internal);
 		std::cerr << (*buckets_it)->second << '\n';
 	}
+	*/
 	
 	std::cerr << "Leaving dynamic::bucketized" << std::endl;
 	return buckets;

@@ -22,9 +22,9 @@ wvec brute_force::final_weights = wvec(k_max_diams, ULONG_MAX);
 
 //:D
 // Auxiliary function that finds possible minimuns
-void brute_force::find_min(wvec& p_weights)
+void brute_force::find_finals(wvec& p_weights)
 {
-	//std::cerr << "Entering brute_force::find_min" << std::endl;
+	//std::cerr << "Entering brute_force::find_finals" << std::endl;
 
 	// Stopping point
 	if(p_weights.size() == 2) {
@@ -65,11 +65,11 @@ void brute_force::find_min(wvec& p_weights)
 			for (; k < subsize; k++)
 				sub_weights.at(k) = p_weights.at(k + 1);
 
-			find_min(sub_weights);
+			find_finals(sub_weights);
 		}
 	}
 	
-	//std::cerr << "Leaving brute_force::find_min" << std::endl;
+	//std::cerr << "Leaving brute_force::find_finals" << std::endl;
 }
 
 //:D
@@ -86,7 +86,7 @@ weight brute_force::run(wvec* p_weights)
 
 
 	// Produce each possible final weight and store in final_weights
-	find_min(*p_weights); // stores in final_weights
+	find_finals(*p_weights); // stores in final_weights
 
 	// Find the minimum one
 	weight min_weight = ULONG_MAX; // Current minimum
